@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Kontakte</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
 </head>
 <body>
-<h1>Willkommen in deinen Kontakten</h1>
-
+<div class="container-fluid text-center">
+    <h1>Willkommen in deinen Kontakten</h1>
+    <a class="h2" th:href="@{/contacts}">Kontakte verwalten</a>
+</div>
 </body>
 </html>
