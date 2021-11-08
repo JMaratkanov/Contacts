@@ -2,7 +2,6 @@ package com.Johann_M;
 
 import com.Johann_M.entities.Contact;
 import com.Johann_M.repository.ContactRepository;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -41,11 +40,13 @@ public class ContactRepositoryTest {
         }
 
         //Assertion: Vergleich der vorhandenen Objekte auf Gleichheit
+        assert conAfterCreate != null;
         assertEquals( conAfterCreate.getfName() , "Vorname_Test" );
         assertEquals( conAfterCreate.getlName() , "Nachname_Test" );
         assertEquals( conAfterCreate.geteMail() , "Email_Test" );
         // .. auf Identität
         assertNotSame( con , conAfterCreate );
+
 
         //Delete
         contactRepository.deleteById(idTmp);

@@ -25,7 +25,7 @@ public class Contact {
     }
 
     @Basic
-    @Column(name = "fName")
+    @Column(name = "f_Name")
     public String getfName() {
         return fName;
     }
@@ -35,7 +35,7 @@ public class Contact {
     }
 
     @Basic
-    @Column(name = "lName")
+    @Column(name = "l_Name")
     public String getlName() {
         return lName;
     }
@@ -45,7 +45,7 @@ public class Contact {
     }
 
     @Basic
-    @Column(name = "email")
+    @Column(name = "e_mail")
     public String geteMail() {
         return eMail;
     }
