@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Kontakte verwalten</title>
+  <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
+</head>
+<body>
+<div class="container-fluid text-center">
+  <div><h2>Hier kann man Kontakte verwalten</h2></div>
+  <div>
+    <a class="h3" th:href="@{/contacts/new}">Neuer Kontakt</a>
+  </div>
+  <div>
+    <table class="table table-bordered">
+      <thead class="thead-dark">
+      <tr>
+        <th>ID</th>
+        <th>Email</th>
+        <th>Vorname</th>
+        <th>Nachname</th>
+        <th></th>
+      </tr>
+      </thead>
+
+      <tbody>
+        <th:block th:each="contact: ${contactList}">
+          <tr>
+            <td>[[${contact.id}]]</td>
+            <td>[[${contact.fName}]]</td>
+            <td>[[${contact.lName}]]</td>
+            <td>[[${contact.eMail}]]</td>
+            <td>
+              <a class="h4 mr-3" th:href="@{'/contacts/edit/' + ${contact.id}}">Bearbeiten</a>
+              <a class="h4" th:href="@{'/contacts/delete/' + ${contact.id}}">Löschen</a>
+              <a class="h4" th:href="@{'/contacts/adress/' + ${contact.id}}">Zeige Adressen</a>
+            </td>
+          </tr>
+        </th:block>
+      </tbody>
+    </table>
+  </div>
+</div>
+</body>
+</html>
