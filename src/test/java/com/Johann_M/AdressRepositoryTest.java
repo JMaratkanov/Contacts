@@ -4,10 +4,7 @@ import com.Johann_M.entities.Adress;
 import com.Johann_M.entities.Contact;
 import com.Johann_M.repository.AdressRepository;
 import com.Johann_M.repository.ContactRepository;
-import org.junit.Before;
-import org.junit.After;
 import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -67,11 +64,8 @@ public class AdressRepositoryTest {
         }
 
         //Assertion: Vergleich der vorhandenen Objekte auf Gleichheit
-        if (adrAfterCreate != null) {
-            assertEquals(adrAfterCreate.getContactID(), contactIdTmp);
-        } else {
-            fail("Kontakt fehlerhaft erzeugt - KontaktID ist null");
-        }
+        assert adrAfterCreate != null;
+        assertEquals(adrAfterCreate.getContactID(), contactIdTmp);
         assertEquals(adrAfterCreate.getPlace(), "Ort_Test");
         assertEquals(adrAfterCreate.getPostcode(), 12345);
         assertEquals(adrAfterCreate.getStreet(), "Teststraße");
