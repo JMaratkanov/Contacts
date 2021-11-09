@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Adressen verwalten</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
+</head>
+<body>
+<div class="container-fluid text-center">
+    <div><h2>Hier kann man deine Adressen verwalten</h2></div>
+    <div>
+        <a class="h3" th:href="@{'/contacts/adress/'+ ${conId} +'/new'}">Neue Adresse</a>
+        <a class="h3" th:href="@{'/contacts'}">Zurück</a>
+    </div>
+    <div>
+        <table class="table table-bordered">
+            <thead class="thead-dark">
+            <tr>
+                <th>Straße</th>
+                <th>Nummer</th>
+                <th>Ort</th>
+                <th>Plz</th>
+                <th></th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <th:block th:each="adress: ${adressList}">
+                <tr>
+                    <td>[[${adress.street}]]</td>
+                    <td>[[${adress.sNumber}]]</td>
+                    <td>[[${adress.place}]]</td>
+                    <td>[[${adress.postcode}]]</td>
+                    <td>
+                        <a class="h4 mr-3" th:href="@{'/contacts/adress/'+ ${conId} +'/edit/' + ${adress.id}}">Bearbeiten</a>
+                        <a class="h4" th:href="@{'/contacts/adress/'+ ${conId} +'/delete/' + ${adress.id}}">Löschen</a>
+                    </td>
+                </tr>
+            </th:block>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>
