@@ -7,7 +7,7 @@
 </head>
 <body>
 <div class="container-fluid text-center">
-    <div><h2>Hier kann man deine Adressen verwalten</h2></div>
+    <div><h2>Hier kann man A̵d̵r̵e̵s̵s̵e̵n̵ Telefonnummern von Kontakt-ID: <span th:text="${conId}"></span> verwalten</h2></div>
     <div>
         <a class="h3" th:href="@{'/contacts/adress/'+ ${conId} +'/new'}">Neue Adresse</a>
         <a class="h3" th:href="@{'/contacts'}">Zurück</a>
@@ -20,6 +20,7 @@
                 <th>Nummer</th>
                 <th>Ort</th>
                 <th>Plz</th>
+                <th>Telefonnummer</th>
                 <th></th>
             </tr>
             </thead>
@@ -31,6 +32,7 @@
                     <td>[[${adress.sNumber}]]</td>
                     <td>[[${adress.place}]]</td>
                     <td>[[${adress.postcode}]]</td>
+                    <td>[[${adress.telefonNummer}]]</td>
                     <td>
                         <a class="h4 mr-3" th:href="@{'/contacts/adress/'+ ${conId} +'/edit/' + ${adress.id}}">Bearbeiten</a>
                         <a class="h4" th:href="@{'/contacts/adress/'+ ${conId} +'/delete/' + ${adress.id}}">Löschen</a>

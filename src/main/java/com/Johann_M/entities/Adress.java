@@ -12,6 +12,7 @@ public class Adress {
     private String place;
     private Integer postcode;
     private Integer contactID;
+    private String telefonNummer;
 
     @Id
     @GeneratedValue
@@ -72,5 +73,15 @@ public class Adress {
 
     public void setPostcode(Integer postcode) {
         this.postcode = postcode;
+    }
+
+    @Basic
+    @Column(name = "telefon_Nummer")
+    public String getTelefonNummer() {
+        return telefonNummer;
+    }
+
+    public void setTelefonNummer(String telefonNummer) {
+        this.telefonNummer = telefonNummer;
     }
 }
